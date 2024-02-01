@@ -105,7 +105,7 @@ const buidlerConfig: HardhatUserConfig = {
   },
   networks: {
     coverage: {
-      url: 'http://localhost:8555',
+      url: 'http://127.0.0.1:8545',
       chainId: COVERAGE_CHAINID,
     },
     kovan: getCommonNetworkConfig(eEthereumNetwork.kovan, 42),
@@ -152,7 +152,15 @@ const buidlerConfig: HardhatUserConfig = {
         count: 20,
       },
     },
-  },
+    anvil: {
+      url: 'http://localhost:8545',
+      accounts: {
+        mnemonic: 'fox sight canyon orphan hotel grow hedgehog build bless august weather swarm',
+        path: "m/44'/60'/0'/0",
+      },
+        chainId: BUIDLEREVM_CHAINID,
+    }, 
+  }, 
 };
 
 export default buidlerConfig;
